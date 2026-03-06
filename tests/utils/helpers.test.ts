@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { debounce, throttle, deepClone, formatFileSize, isValidUrl, generateId } from '../utils/helpers'
+import { debounce, throttle, deepClone, formatFileSize, isValidUrl, generateId } from '../../src/utils/helpers'
 
 describe('Helpers Utilities', () => {
   describe('debounce', () => {

@@ -6,8 +6,8 @@ import appReducer, {
   toggleFullscreen,
   exitFullscreen,
   setUseProxy,
-} from '../store/appSlice'
-import type { AppState } from '../types'
+} from '../../src/store/appSlice'
+import type { AppState } from '../../src/types'
 
 describe('appSlice reducer', () => {
   let initialState: AppState

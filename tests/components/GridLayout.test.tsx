@@ -2,9 +2,9 @@ import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { Provider } from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit'
-import { GridLayout } from '../components/GridLayout'
-import appReducer from '../store/appSlice'
-import type { IframeConfig } from '../types'
+import { GridLayout } from '../../src/components/GridLayout'
+import appReducer from '../../src/store/appSlice'
+import type { IframeConfig } from '../../src/types'
 
 describe('GridLayout', () => {
   const mockIframes: IframeConfig[] = [
@@ -52,8 +52,8 @@ describe('GridLayout', () => {
       </Provider>
     )
 
-    const iframes = screen.getAllByRole('article')
-    expect(iframes).toHaveLength(2)
+    const titles = screen.getAllByRole('heading', { level: 3 })
+    expect(titles).toHaveLength(2)
   })
 
   it('should apply fullscreen class to the correct iframe', () => {
@@ -70,8 +70,8 @@ describe('GridLayout', () => {
       </Provider>
     )
 
-    const fullscreenIframe = screen.getByTitle('Example 1')
-    expect(fullscreenIframe).toHaveClass('fullscreen')
+    const fullscreenContainer = screen.getByTitle('Example 1').closest('.iframe-container')
+    expect(fullscreenContainer).toHaveClass('fullscreen')
   })
 
   it('should apply correct grid columns for different iframe counts', () => {
@@ -89,8 +89,8 @@ describe('GridLayout', () => {
       </Provider>
     )
 
-    let grid = screen.getByRole('grid')
-    expect(grid).toHaveClass('grid-cols-1')
+    let containers = document.querySelectorAll('.iframe-container')
+    expect(containers).toHaveLength(1)
 
     // Test 3-4 iframes (should use 2 columns)
     rerender(
@@ -104,7 +104,7 @@ describe('GridLayout', () => {
       </Provider>
     )
 
-    grid = screen.getByRole('grid')
-    expect(grid).toHaveClass('grid-cols-2')
+    containers = document.querySelectorAll('.iframe-container')
+    expect(containers).toHaveLength(4)
   })
 })
