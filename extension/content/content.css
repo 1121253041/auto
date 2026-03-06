@@ -1,0 +1,26 @@
+/**
+ * Content Script Styles
+ * 用于扩展UI组件的样式
+ */
+
+.multi-page-viewer-extension-indicator {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: #9c27b0;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.multi-page-viewer-extension-indicator.active {
+  background: #4caf50;
+}
+
+.multi-page-viewer-extension-indicator.inactive {
+  background: #f44336;
+}

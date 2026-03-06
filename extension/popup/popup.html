@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Page Viewer Extension</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="popup-header">
+      <h1>🔌 Multi-Page Viewer</h1>
+      <p class="version">v1.0.0</p>
+    </div>
+
+    <div class="popup-content">
+      <div class="status-indicator">
+        <span class="status-label">状态:</span>
+        <span id="status-text" class="status-text">加载中...</span>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">
+          <input type="checkbox" id="enable-checkbox" checked>
+          <span>启用扩展</span>
+        </label>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">
+          <input type="checkbox" id="broadcast-checkbox" checked>
+          <span>输入广播</span>
+        </label>
+        <p class="control-hint">同步输入到所有iframe</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="info-group">
+        <div class="info-item">
+          <span class="info-label">连接的标签页:</span>
+          <span id="tabs-count" class="info-value">0</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">活跃的iframe:</span>
+          <span id="iframes-count" class="info-value">0</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="refresh-btn" class="btn btn-primary">刷新状态</button>
+      </div>
+    </div>
+
+    <div class="popup-footer">
+      <a href="http://localhost:3000" target="_blank">打开应用</a>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
