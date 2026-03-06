@@ -8,7 +8,7 @@ const createPluginContext = (): PluginContext => {
   return {
     // 应用状态
     getState: () => store.getState().app,
-    setState: (_state: any) => {
+    setState: () => {
       console.warn('Direct state setting is not recommended. Use Redux actions instead.')
     },
 
@@ -39,7 +39,7 @@ const createPluginContext = (): PluginContext => {
           return null
         }
       },
-      set: (key: string, value: any) => {
+      set: (key: string, value: unknown) => {
         try {
           localStorage.setItem(`plugin-${key}`, JSON.stringify(value))
         } catch (error) {

@@ -115,7 +115,7 @@ class PluginManager {
   }
 
   // 触发配置变更钩子
-  async triggerConfigChange(config: any): Promise<void> {
+  async triggerConfigChange(config: unknown): Promise<void> {
     for (const plugin of this.plugins.values()) {
       try {
         if (plugin.onConfigChange) {

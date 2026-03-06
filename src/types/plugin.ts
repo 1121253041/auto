@@ -19,19 +19,19 @@ export interface Plugin {
   onIframeError?: (iframeId: string, url: string, error: Error) => void
 
   // 配置相关钩子
-  onConfigChange?: (config: any) => void
+  onConfigChange?: (config: unknown) => void
 
   // 自定义UI组件（可选）
   customUI?: {
-    settingsPanel?: React.ComponentType<any>
-    toolbarButton?: React.ComponentType<any>
+    settingsPanel?: React.ComponentType<Record<string, never>>
+    toolbarButton?: React.ComponentType<Record<string, never>>
   }
 }
 
 export interface PluginContext {
   // 应用状态
-  getState: () => any
-  setState: (state: any) => void
+  getState: () => unknown
+  setState: (state: unknown) => void
 
   // iframe 操作
   addIframe: (url: string, title: string, useProxy?: boolean) => void
@@ -43,8 +43,8 @@ export interface PluginContext {
 
   // 存储API
   storage: {
-    get: (key: string) => any
-    set: (key: string, value: any) => void
+    get: (key: string) => unknown
+    set: (key: string, value: unknown) => void
     remove: (key: string) => void
   }
 
