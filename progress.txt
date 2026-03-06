@@ -48,4 +48,9 @@
       ✅ TypeScript类型检查
     - 创建测试清单文档（TEST_CHECKLIST.md）
     - 所有服务器正常运行（前端:3000, 代理:3001）
+    - 安装Playwright进行端到端测试
+    - 创建8个端到端测试场景（tests/e2e.spec.ts）
+    - 配置Playwright（playwright.config.ts）
+    - 添加测试脚本到package.json
+    - 创建端到端测试报告（E2E_TEST_REPORT.md）
     - 验收通过，项目可进入下一阶段开发
