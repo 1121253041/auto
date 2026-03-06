@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { IframeConfig } from '../types'
 import { getProxiedUrl } from '../utils/proxy'
+import { pluginManager } from '../utils/initializePlugins'
 import './IframeContainer.css'
 
 interface IframeContainerProps {
@@ -23,11 +24,15 @@ export function IframeContainer({
 
   const handleLoad = () => {
     setIsLoading(false)
+    // 触发插件钩子
+    pluginManager.triggerIframeLoad(iframe.id, iframe.url)
   }
 
   const handleError = () => {
     setIsLoading(false)
     setHasError(true)
+    // 触发插件钩子
+    pluginManager.triggerIframeError(iframe.id, iframe.url, new Error('Failed to load iframe'))
   }
 
   return (

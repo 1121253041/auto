@@ -11,7 +11,10 @@
       "Bash(ping:*)",
       "Bash(GIT_CURL_VERBOSE=1 git push:*)",
       "Bash(ssh-keyscan:*)",
-      "Bash(ssh-keygen:*)"
+      "Bash(ssh-keygen:*)",
+      "Bash(npm start:*)",
+      "Bash(netstat:*)",
+      "Bash(git add:*)"
     ]
   }
 }
