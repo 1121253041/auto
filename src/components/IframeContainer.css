@@ -1,0 +1,140 @@
+.iframe-container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.iframe-container:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.iframe-container.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  margin: 0;
+  border-radius: 0;
+}
+
+.iframe-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+}
+
+.iframe-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.iframe-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.proxy-badge {
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.btn-fullscreen,
+.btn-delete {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.btn-fullscreen:hover {
+  background: #e0e0e0;
+}
+
+.btn-delete {
+  color: #999;
+}
+
+.btn-delete:hover {
+  background: #ffebee;
+  color: #f44336;
+}
+
+.iframe-content {
+  flex: 1;
+  position: relative;
+  min-height: 400px;
+}
+
+.iframe-container.fullscreen .iframe-content {
+  height: calc(100vh - 57px);
+}
+
+.iframe-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.iframe-loading,
+.iframe-error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.iframe-error {
+  color: #f44336;
+}
+
+.error-url {
+  font-size: 12px;
+  color: #999;
+  margin-top: 8px;
+}

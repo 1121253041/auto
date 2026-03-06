@@ -5,7 +5,13 @@
       "Bash(mkdir:*)",
       "Bash(npm install:*)",
       "Bash(curl:*)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(test:*)",
+      "Bash(npm run:*)",
+      "Bash(ping:*)",
+      "Bash(GIT_CURL_VERBOSE=1 git push:*)",
+      "Bash(ssh-keyscan:*)",
+      "Bash(ssh-keygen:*)"
     ]
   }
 }

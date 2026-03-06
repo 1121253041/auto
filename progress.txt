@@ -7,3 +7,18 @@
     - 配置开发环境：ESLint, Prettier, TypeScript
     - 创建基础项目目录结构：src/components, src/store, src/utils, src/types
     - 测试通过：开发服务器成功启动在 localhost:3000
+  - 2026-03-06 19:45:00 完成阶段2核心功能开发
+    - 创建 IframeContainer 组件：支持加载状态、错误处理、全屏切换
+    - 创建 GridLayout 组件：实现响应式布局（1-2个用1列，3-4个用2列，>4个用3列）
+    - 创建 ConfigPanel 组件：支持添加/删除/修改URL，URL验证
+    - 实现 Redux 状态管理：appSlice 管理iframe列表和全屏状态
+    - 实现 localStorage 持久化存储配置
+    - 实现空状态提示UI
+    - 测试通过：项目构建成功
+  - 2026-03-06 20:05:00 完成阶段3和阶段4
+    - Redux状态管理已完善
+    - 创建 CORS Proxy 服务器（Express）
+    - 实现代理请求转发、CORS头添加、域名白名单验证、请求日志记录
+    - 集成代理到前端：支持全局和单个iframe的代理设置
+    - 更新UI：添加代理开关和状态指示器
+    - 测试通过：项目构建成功
